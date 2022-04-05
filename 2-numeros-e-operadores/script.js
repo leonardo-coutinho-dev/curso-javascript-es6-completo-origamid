@@ -86,3 +86,102 @@ console.log(
   isNaN(typeNaN),
   'Testing NaN - isNaN should be true here',
 );
+
+// The order matters, always starting with multiplication and division, and after that the sums and subtractions
+
+var total1 = 20 + 5 * 2;
+var total2 = (20 + 5) * 2;
+var total3 = (20 / 2) * 5;
+var total4 = 10 + 10 * 2 + 20 / 2;
+
+console.log(
+  'The order matters, see the following examples:',
+  '\n',
+  'The result of the following operation 20 + 5 * 2 is equal to:',
+  total1,
+  '\n',
+  'The result of the following operation (20 + 5) *2 is equal to:',
+  total2,
+  '\n',
+  'The result of the following operation (20 / 2) * 5 is equal to:',
+  total3,
+  '\n',
+  'The result of the following operation 10 + 10 * 2 + 20 / 2 is equal to:',
+  total4,
+);
+
+var total5 = (((20 + 30) * 2) / 4) % 5;
+console.log(total5);
+
+// Unary Arithmetic Operators !== from Binary Arithmetic Operators (that needs two numbers to make a operation)
+
+var increment = 1;
+console.log('The initial value of increment is:', increment);
+increment++;
+console.log(
+  "The value of the increment after the operation 'increment++' is:",
+  increment,
+);
+
+console.log(
+  `If I put '++' before the variable increment ${increment}, the result is:`,
+  ++increment,
+);
+console.log(
+  `If I put '++' after the variable increment ${increment}, the result is:`,
+  increment++,
+);
+console.log(
+  `The same as when u put it before the variable, because the operation was not executed yet, but now, the value of increment is: ${increment} (after the execution of the operation)`,
+);
+
+// You cannot alter the value of a const using increment.
+
+var decrement = 0;
+
+console.log(
+  `The value of the variable decrement ${decrement} after the operation '--decrement' is: ${--decrement}.`,
+);
+
+// The + and - operators try to change the following value into a number, examples:
+
+var stringNumber1 = '1';
+var stringNumber2 = '2';
+
+console.log(stringNumber1, typeof stringNumber1);
+console.log(stringNumber2, typeof stringNumber2);
+
+console.log(
+  `The sum of stringNumber1 (${stringNumber1}) with stringNumber2 (${stringNumber2}), is: ${
+    stringNumber1 + stringNumber2
+  } (both being typeof string)`,
+);
+
+console.log(
+  `If I put the '+' in front of both variables, we have the following: stringNumber1 + stringNumber2 = ${
+    +stringNumber1 + +stringNumber2
+  } (both converted to typeof number)`,
+);
+
+var number1 = +stringNumber1;
+var number2 = -stringNumber2;
+
+console.log(number1, typeof number1);
+console.log(number2, typeof number2);
+
+var string1 = 'just some random text';
+var stringToNumber = +string1;
+console.log(stringToNumber, typeof stringToNumber);
+
+// How can you divide the body weight by 2? (having the following):
+
+var weightNumber = 90;
+var unity = 'kg';
+var weight = weightNumber + unity;
+var weightDividedByTwo = weight / 2; //wrong
+
+console.log(weightDividedByTwo, typeof weightDividedByTwo);
+
+var weightDividedByTwo2 = weightNumber / 2 + unity; // correct
+
+console.log(weightDividedByTwo2, typeof weightDividedByTwo2);
