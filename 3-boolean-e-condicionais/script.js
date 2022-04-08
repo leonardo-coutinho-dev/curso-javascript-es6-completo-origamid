@@ -98,34 +98,57 @@ let number__1 = 10;
 let number__2 = 10;
 let number__3 = 10;
 
-let test__1 = (number__1 > number__2) & (number__1 > number__3);
-let test__1_less = (number__1 < number__2) & (number__1 < number__3);
-let test__1_equal = (number__1 = number__2) & (number__1 = number__3);
-let test__1__1 = (number__1 > number__2) & (number__1 < number__3);
-let test__1__2 = (number__1 < number__2) & (number__1 > number__3);
+let test__1 = number__1 > number__2 && number__1 > number__3;
+let test__1_less = number__1 < number__2 && number__1 < number__3;
+let test__1_equal = (number__1 = number__2) && (number__1 = number__3);
+let test__1__1 = number__1 > number__2 && number__1 < number__3;
+let test__1__2 = number__1 < number__2 && number__1 > number__3;
+
+console.log(!!test__1_equal);
+console.log(!!0, `0 (zero) tem o valor = ${!!0}`);
 
 // testar o valor das operações: console.log(!!test__1);
 
-if (test__1) {
+if (!!test__1) {
   console.log(
     `A variável 'number__1' é maior que a variável 'number__2' e maior que a variável 'number__3'. number__1 = ${number__1} e number__2 = ${number__2} e number__3 = ${number__3}`,
   );
-} else if (test__1_equal) {
+} else if (!!test__1_equal) {
   console.log(
     `A variável 'number__1' é igual a variável 'number__2' e igual a variável 'number__3'. number__1 = ${number__1} e number__2 = ${number__2} e number__3 = ${number__3}`,
   );
-} else if (test__1_less) {
+} else if (!!test__1_less) {
   console.log(
     `A variável 'number__1' é menor que a variável 'number__2' e menor que a variável 'number__3'. number__1 = ${number__1} e number__2 = ${number__2} e number__3 = ${number__3}`,
   );
-} else if (test__1__1) {
+} else if (!!test__1__1) {
   console.log(
     `A variável 'number__1' é maior que a variável 'number__2' e menor que a variável 'number__3'. number__1 = ${number__1} e number__2 = ${number__2} e number__3 = ${number__3}`,
   );
-} else if (test__1__2) {
+} else if (!!test__1__2) {
   console.log(
     `A variável 'number__1' é menor que a variável 'number__2' e maior que a variável 'number__3'. number__1 = ${number__1} e number__2 = ${number__2} e number__3 = ${number__3}`,
   );
 }
 
-/* o teste 1 cobre todas as possibilidades */
+/* o teste 1 (e todas as suas variações) cobre todas as possibilidades */
+
+/*
+
+o sinal de = (unario) serve como atribuição
+o sinal de == (binário) serve para comparação não estrita
+o sinal de === (ternário) serve para comparação estrita
+o sinal de != ou !== serve para verificar a negação
+
+*/
+
+/*
+operador OU compara se um ou outro valor é verdadeiro - e retorna o primeiro valor verdadeiro
+*/
+
+var condicional__1 = 5 - 5 || undefined || NaN || 10;
+console.log(
+  `A variável condicional__1 tem como resultado da avaliação feita acima (5 - 5 || undefined || 10) o valor ${condicional__1} e é ${!!condicional__1} (verdadeira ou falsa). 5 - 5 = ${
+    5 - 5
+  } e ${!!(5 - 5)} e undefined = ${!!undefined}`,
+);
