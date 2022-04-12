@@ -51,7 +51,8 @@ if(false)
 if(0)
 if(NaN)
 if(null)
-if(undefined)if('')
+if(undefined)
+if('')
 
 Truthy:
 
@@ -147,8 +148,52 @@ operador OU compara se um ou outro valor é verdadeiro - e retorna o primeiro va
 */
 
 var condicional__1 = 5 - 5 || undefined || NaN || 10;
+var condicional__2 = 5 - 5 && undefined && NaN && 10;
+
 console.log(
-  `A variável condicional__1 tem como resultado da avaliação feita acima (5 - 5 || undefined || 10) o valor ${condicional__1} e é ${!!condicional__1} (verdadeira ou falsa). 5 - 5 = ${
+  `A variável condicional__1 tem como resultado da avaliação feita acima (5 - 5 || undefined || NaN || 10) o valor ${condicional__1} e é ${!!condicional__1} (verdadeira ou falsa). 5 - 5 = ${
     5 - 5
-  } e ${!!(5 - 5)} e undefined = ${!!undefined}`,
+  } e ${!!(5 - 5)} e ${NaN} = ${!!NaN} e undefined = ${!!undefined}`,
 );
+
+console.log(
+  `A variável condicional__2 tem como resultado da avaliação feita acima (5 - 5 && undefined && NaN && 10) o valor ${condicional__2} e é ${!!condicional__2} (verdadeira ou falsa). 5 - 5 = ${
+    5 - 5
+  } e ${!!(5 - 5)} e ${NaN} = ${!!NaN} e undefined = ${!!undefined}`,
+);
+
+// && (e) - se algum valor for false, ele retorna esse valor e para a verificação
+
+// || (ou) - se algum valor for true, ele retorna esse valor e para a verificação
+
+// caso switch - você pode verificar se uma mesma variável é igual a diferentes valores
+
+var diaSemana = 'Teste default';
+
+switch (diaSemana) {
+  case 'Segunda':
+    console.log(`Hoje é ${diaSemana}`);
+    break;
+  case 'Terça':
+    console.log(`Hoje é ${diaSemana}`);
+    break;
+  case 'Quarta':
+    console.log(`Hoje é ${diaSemana}`);
+    break;
+  case 'Quinta':
+    console.log(`Hoje é ${diaSemana}`);
+    break;
+  case 'Sexta':
+    console.log(`Hoje é ${diaSemana}`);
+    break;
+  case 'Sábado':
+    console.log(`Hoje é ${diaSemana}`);
+    break;
+  case 'Domingo':
+    console.log(`Hoje é ${diaSemana}`);
+    break;
+  default:
+    console.log(
+      `Informe um valor válido para um dos dias da semana! Atualmente você informou: ${diaSemana}`,
+    );
+}
