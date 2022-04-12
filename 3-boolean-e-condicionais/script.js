@@ -197,3 +197,68 @@ switch (diaSemana) {
       `Informe um valor válido para um dos dias da semana! Atualmente você informou: ${diaSemana}`,
     );
 }
+
+// Verifique se a sua idade é maior do que a de algum parente
+
+var minhaIdade = 51;
+var idadeParente = 50;
+
+if (minhaIdade > idadeParente) {
+  console.log(
+    `Minha idade é maior que a de meu parente! Minha idade: ${minhaIdade}; Idade de meu parente: ${idadeParente}`,
+  );
+} else if (minhaIdade < idadeParente) {
+  console.log(
+    `A idade de meu parente é maior que a minha! Minha idade: ${minhaIdade}; Idade de meu parente: ${idadeParente}`,
+  );
+} else if ((minhaIdade = idadeParente)) {
+  console.log(
+    `Minha idade é igual a de meu parente! Minha idade: ${minhaIdade}; Idade de meu parente: ${idadeParente}`,
+  );
+}
+
+// Dependendo do resultado coloque no console 'É maior', 'É igual' ou 'É menor'
+
+// Qual valor é retornado na seguinte expressão?
+var expressao = 5 - 2 && 5 - ' ' && 5 - 2;
+
+// 3
+
+console.log(expressao);
+
+// Verifique se as seguintes variáveis são Truthy ou Falsy
+var nome = 'Andre';
+var idade = 28;
+var possuiDoutorado = false;
+var empregoFuturo;
+var dinheiroNaConta = 0;
+
+console.log(
+  !!nome,
+  !!idade,
+  !!possuiDoutorado,
+  !!empregoFuturo,
+  !!dinheiroNaConta,
+);
+
+// Compare o total de habitantes do Brasil com China (valor em milhões)
+var brasil = 207;
+var china = 1340;
+
+// O que irá aparecer no console?
+if ('Gato' === 'gato' && 5 > 2) {
+  console.log('Verdadeiro');
+} else {
+  console.log('Falso');
+}
+
+// false
+
+// O que irá aparecer no console?
+if ('Gato' === 'gato' || 5 > 2) {
+  console.log('Gato' && 'Cão');
+} else {
+  console.log('Falso');
+}
+
+// Cão
