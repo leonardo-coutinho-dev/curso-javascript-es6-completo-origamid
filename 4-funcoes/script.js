@@ -104,3 +104,59 @@ console.log(checkAge(60));
   be careful, return different types of values it's not a good idea
 
 */
+
+let thirdAge = (age) => {
+  if (typeof age !== 'number') {
+    return 'Please, inform us a valid value for your age!';
+  } else if (age >= 60) {
+    return true;
+  } else if (age < 60) {
+    return false;
+  }
+};
+
+console.log(thirdAge(60));
+
+/*
+
+  variables and functions defined inside a block are not visible outside of it
+
+*/
+
+let notVisitedCountries = (visitedCoutries) => {
+  var totalCountries = 193;
+  return `I still have to visit ${
+    totalCountries - visitedCoutries
+  } countries to complete my list and travel to every single country in the world!`;
+};
+
+console.log(notVisitedCountries(90));
+
+/*
+
+escopo léxico ~ functions can always access variables that were created in the parent context
+
+*/
+
+var profession = 'Programmer';
+
+let someData__1 = () => {
+  var name = 'Leo';
+  var age = 24;
+  let someData__2 = () => {
+    var city = 'Salvador';
+    var inLove = true;
+    return `${name}, ${age}, ${city}, ${inLove}`;
+  };
+  return someData__2();
+};
+
+console.log(someData__1());
+
+/*
+
+functions are also hoisted ~ JavaScipt moves all functions to the memory before they are executed
+
+the same that happens with var
+
+*/
