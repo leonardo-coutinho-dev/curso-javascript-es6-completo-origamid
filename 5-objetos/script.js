@@ -58,3 +58,42 @@ console.log(ENumber);
 var randomNumber = Math.random();
 
 console.log(randomNumber);
+
+var car = {};
+
+console.log(typeof car);
+
+/*
+
+dot notation - access properties and methods of an object by using dot.
+
+*/
+
+var guitar = {
+    color: 'white',
+    strings: 6,
+    height: 1.8,
+    brand: 'gibson',
+};
+
+/*
+dot notation get: get a property(value)/method inside a object
+dot notation set: set (create) a new object property/method
+*/
+
+guitar.color = 'black'; //altering object property value
+guitar.age = '9 years'; //creating/adding a new object property
+
+var guitarColor = guitar.color;
+var guitarStrings = guitar.strings;
+var guitarHeight = guitar.height;
+var guitarBrand = guitar.brand;
+
+
+console.log(guitar, guitarColor);
+
+/*
+
+this (keyword): references the object itself
+
+*/
