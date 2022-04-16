@@ -31,12 +31,30 @@ Method is a property that has a function passed as a value;
 */
 
 var square = {
-    area: (side) => {
-        return side * side;
+    sides: 4,
+    area(sideSize) {
+        return sideSize * sideSize;
     },
-    perimeter: (side) => {
-        return side * 4; 
+    perimeter(sideSize) {
+        return this.sides * sideSize; 
     },
 };
 
 console.log(square.area(8), square.perimeter(8));
+
+
+/*
+
+with objects you can divide your code into small reusable parts (organizing it better)
+
+*/
+
+var piNumber = Math.PI;
+var ENumber = Math.E;
+
+console.log(piNumber);
+console.log(ENumber);
+
+var randomNumber = Math.random();
+
+console.log(randomNumber);
