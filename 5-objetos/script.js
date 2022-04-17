@@ -69,11 +69,16 @@ dot notation - access properties and methods of an object by using dot.
 
 */
 
+var height = 120;
+
 var guitar = {
     color: 'white',
     strings: 6,
     height: 1.8,
     brand: 'gibson',
+    halfTheHeight () {
+        return this.height / 2;
+    }
 };
 
 /*
@@ -97,3 +102,5 @@ console.log(guitar, guitarColor);
 this (keyword): references the object itself
 
 */
+
+console.log(guitar.halfTheHeight());
