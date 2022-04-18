@@ -160,3 +160,82 @@ functions are also hoisted ~ JavaScipt moves all functions to the memory before 
 the same that happens with var
 
 */
+
+// Crie uma função para verificar se um valor é Truthy
+
+let checkValue = (value) => {
+  if (!!value) {
+    console.log('O valor é verdadeiro!');
+  } else {
+    console.log('O valor é falso!');
+  }
+};
+
+checkValue('Leonardo');
+checkValue(0);
+
+// Crie uma função matemática que retorne o perímetro de um quadrado
+// lembrando: perímetro é a soma dos quatro lados do quadrado
+
+let perimeter = (side) => {
+  return side * 4;
+};
+
+console.log(perimeter(8));
+
+// Crie uma função que retorne o seu nome completo
+// ela deve possuir os parâmetros: nome e sobrenome
+
+let fullName = (name, surname) => {
+  return `O seu nome completo é: ${name + surname}`;
+};
+
+console.log(fullName('Leonardo', ' Coutinho dos Santos'));
+
+// Crie uma função que verifica se um número é par
+
+let isEven = (number) => {
+  if (typeof number !== 'number') {
+    return `Por favor, digite um número!`;
+  } else if (number % 2 === 0) {
+    return `O número ${number} é um número par!`;
+  } else {
+    return `O número ${number} é um número ímpar!`;
+  }
+};
+
+console.log(isEven(42));
+
+// Crie uma função que retorne o tipo de
+// dado do argumento passado nela (typeof)
+
+let typeOfData = (parameter) => {
+  return `O tipo do dado passado é: ${typeof parameter}`;
+};
+
+let var__1;
+
+console.log(typeOfData(60));
+console.log(typeOfData(true));
+console.log(typeOfData(var__1));
+console.log(typeOfData('60'));
+
+// addEventListener é uma função nativa do JavaScript
+// o primeiro parâmetro é o evento que ocorre e o segundo o Callback
+// utilize essa função para mostrar no console o seu nome completo
+// quando o evento 'scroll' ocorrer.
+
+document.addEventListener('scroll', () => {
+  console.log('Leonardo Coutinho dos Santos');
+});
+
+// Corrija o erro abaixo
+var totalPaises = 193;
+function precisoVisitar(paisesVisitados) {
+  return `Ainda faltam ${totalPaises - paisesVisitados} países para visitar`;
+}
+function jaVisitei(paisesVisitados) {
+  return `Já visitei ${paisesVisitados} do total de ${totalPaises} países`;
+}
+console.log(precisoVisitar(20));
+console.log(jaVisitei(20));

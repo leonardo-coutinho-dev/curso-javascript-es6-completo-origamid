@@ -14,15 +14,23 @@ functions = methods
 */
 
 var person = {
-    name: 'Leo',
-    age: 24,
-    city: 'Salvador',
-    state: 'Bahia',
-    country: 'Brazil',
-    profession: 'Programmer'
-}
+  name: 'Leo',
+  age: 24,
+  city: 'Salvador',
+  state: 'Bahia',
+  country: 'Brazil',
+  profession: 'Programmer',
+};
 
-console.log(typeof person, person.name, person.age, person.city, person.state, person.country, person.profession);
+console.log(
+  typeof person,
+  person.name,
+  person.age,
+  person.city,
+  person.state,
+  person.country,
+  person.profession,
+);
 
 /*
 
@@ -31,17 +39,16 @@ Method is a property that has a function passed as a value;
 */
 
 var square = {
-    sides: 4,
-    area(sideSize) {
-        return sideSize * sideSize;
-    },
-    perimeter(sideSize) {
-        return this.sides * sideSize; 
-    },
+  sides: 4,
+  area(sideSize) {
+    return sideSize * sideSize;
+  },
+  perimeter(sideSize) {
+    return this.sides * sideSize;
+  },
 };
 
 console.log(square.area(8), square.perimeter(8));
-
 
 /*
 
@@ -72,13 +79,13 @@ dot notation - access properties and methods of an object by using dot.
 var height = 120;
 
 var guitar = {
-    color: 'white',
-    strings: 6,
-    height: 1.8,
-    brand: 'gibson',
-    halfTheHeight () {
-        return this.height / 2;
-    }
+  color: 'white',
+  strings: 6,
+  height: 1.8,
+  brand: 'gibson',
+  halfTheHeight() {
+    return this.height / 2;
+  },
 };
 
 /*
@@ -94,7 +101,6 @@ var guitarStrings = guitar.strings;
 var guitarHeight = guitar.height;
 var guitarBrand = guitar.brand;
 
-
 console.log(guitar, guitarColor);
 
 /*
@@ -104,3 +110,103 @@ this (keyword): references the object itself
 */
 
 console.log(guitar.halfTheHeight());
+
+/*
+in terms of scope, the object has access to the variables from outside the object itself, but you cannot access the variables from inside the object outside a object;
+
+the object inherits properties and methods from the entity object that was used to creat the object itself
+
+object is a function that creates an object?
+*/
+
+var objectEntity = Object();
+
+console.log(
+  guitar.hasOwnProperty('color'),
+  guitar.hasOwnProperty('strings'),
+  guitar.hasOwnProperty('height'),
+  guitar.hasOwnProperty('width'),
+);
+
+/*
+
+to know how to program well, you have to know the different properties and methods javascript has to offer so you can use it well on a daily basis
+
+*/
+
+var coutingString = `This is only a random string, created so I can count how many characters there is here  !`;
+
+console.log(coutingString.length);
+
+// exercises:
+
+// Crie um objeto com os seus dados pessoais
+// Deve possuir pelo menos duas propriedades nome e sobrenome
+
+var personalData = {
+  name: 'Leonardo',
+  surname: 'Coutinho dos Santos',
+  age: 24,
+  RG: '111.222.333-2',
+  CPF: '000.444.555-25',
+  city: 'Salvinéia',
+  state: 'Salvinéiandia',
+  country: 'Salvinéialoândia',
+};
+
+// Crie um método no objeto anterior, que mostre o seu nome completo
+
+personalData.fullName = () => {
+  return `${personalData.name} ${personalData.surname}`;
+};
+
+console.log(personalData.fullName());
+
+// Modifique o valor da propriedade preco para 3000
+var carro = {
+  preco: 1000,
+  portas: 4,
+  marca: 'Audi',
+};
+
+carro.preco = 3000;
+
+console.log(carro.preco);
+
+// Crie um objeto de um cachorro que represente um labrador,
+// preto com 10 anos, que late ao ver um homem
+
+var blackLabrador = {
+  species: 'Dog',
+  breed: 'Labrador',
+  color: 'Black',
+  age: 10,
+  bark(pessoa) {
+    if (pessoa === 'man') {
+      return `ROOF!`;
+    } else if (pessoa === 'woman') {
+      return ` ~ the sound of silence `;
+    } else {
+      return `Please, inform us the parameter: man or woman`;
+    }
+  },
+};
+
+console.log(blackLabrador.bark('woman'));
+
+// everything is a object
+
+/*
+strings, numbers, boolean, everything in JavaScript has properties and methods, therefore, everything is a object
+
+and u can access this properties and methods using dot notation
+*/
+
+var string__1 = 'String No. 1 > String No. 2 > String No. 3 > String No. 4';
+
+console.log(string__1.length);
+console.log(string__1.charAt(13));
+let string__2 = string__1.replaceAll('>', '<');
+console.log(string__2.split('<'));
+
+// a string will inherit properties and methods from the string constructor
