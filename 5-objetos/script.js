@@ -210,3 +210,38 @@ let string__2 = string__1.replaceAll('>', '<');
 console.log(string__2.split('<'));
 
 // a string will inherit properties and methods from the string constructor
+
+var number__1 = 4.8;
+
+console.log(
+  number__1.toString(),
+  number__1.toFixed(),
+  typeof number__1,
+  typeof number__1.toString(),
+);
+
+/*
+for a brief moment, the number is wrapped in a object, havin' access to it's properties and methods
+*/
+
+let function__1 = (
+  parameter1,
+  parameter2,
+  parameter3,
+  parameter4,
+  parameter5,
+) => {
+  return;
+};
+
+console.log(
+  `This function total amount of parameters is: ${function__1.length}`,
+);
+
+console.log(
+  `The inner text inside the button of the page is: ${eventButton.innerText}`,
+);
+
+/*
+properties and methods (like addEventListener, querySelector, ...) are called Web API's which allows interaction (comunication) between JavaScript and the Browser;
+*/
